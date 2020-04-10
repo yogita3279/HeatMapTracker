@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -66,3 +67,14 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+=======
+# HeatMapTracker
+This project is under construction but it has components that show how  to integrate heatmap on googleMap in react. 
+
+  #Run project by using below commands:
+1) git clone https://github.com/yogita3279/HeatMapTracker.git
+2) npm install
+3) npm start
+
+Make sure you have installed all the compatible packages,check package.json for versions
+>>>>>>> 5c1ff5ef72d23334800644ac2e97b0209047adc8
