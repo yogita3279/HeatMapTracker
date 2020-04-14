@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import GooglePlacesAutocomplete from 'react-google-places-autocomplete';
 import 'react-google-places-autocomplete/dist/index.min.css';
 import CovidTracker from './components/CovidData';
+import Modal from './components/Modal'
 import Geocode from "react-geocode";
 Geocode.setApiKey( "AIzaSyDeeXSRb_yBsk7t6phbcxKFpVN5GwxteRw" );
 Geocode.setRegion("us");
@@ -36,7 +37,7 @@ class MapContainer extends React.Component {
 		super( props );
 		this.state = {
       address: '',
-      heatMapVisible:false,
+      isOpen: false,
      data:null,
 			mapPosition: {
 				lat: this.props.center.lat,
@@ -47,7 +48,13 @@ class MapContainer extends React.Component {
 				lng: this.props.center.lng
 			}
 		}
-	}
+  }
+  
+  toggleModal = () => {
+    this.setState({
+      isOpen: !this.state.isOpen
+    });
+  }
 
   componentDidMount() {
 		Geocode.fromLatLng( this.state.mapPosition.lat , this.state.mapPosition.lng ).then(
@@ -177,8 +184,17 @@ this.state.heatMapVisible=true
         <Nav.Link href="#" id="self">Self Report</Nav.Link>
         <CovidTracker getCovidData={this.getCovidData}/>
       </Nav>
-    
+     
     </Navbar>
+
+   <button onClick={this.toggleModal}>
+          Open the modal
+        </button>
+
+        <Modal show={this.state.isOpen}
+          onClose={this.toggleModal}>
+          Here's some content for the modal
+        </Modal>
       
       <div style= {{ marginTop: '10px' }}>
 
@@ -236,7 +252,6 @@ this.state.heatMapVisible=true
 						/>
 						<Marker />
 
-            {/* if( {this.state.heatMapVisible}){ */}
                  <HeatMap
                  gradient={gradient}
                  positions={this.props.positions}
