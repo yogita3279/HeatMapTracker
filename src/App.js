@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import Map from './components/HeatMapWithGoogleMap';
+import ReactBootstrap, {Nav} from 'react-bootstrap';
 import './styles/Style.css'
 import Header from './components/Header';
-import Modal from './components/Modal';
 
 const data = [
   { lat: 47.6062095,lng: -122.3320708,weight: 0.5 },
@@ -15,21 +15,22 @@ const data = [
 ];
 class App extends Component {
 
+  constructor(props){
+   super(props)
+
+  }
+
+
+
   render(){
 
     return(
     <div>
       <Header/>
-      <button
-          class="toggle-button"
-          id="centered-toggle-button"
-          onClick={e => {
-            this.showModal(e); // define show modal function
-          }}
-        >open Me</button>
-      <Modal />
+ 
       <div class="map">
-        <Map center={{ lat: 47.333, lng: -122.606 }} zoom={14} positions={data}></Map>
+        <Map center={{ lat: 47.333, lng: -122.606 }} zoom={14} positions={data}>
+        </Map>
       </div>
     </div>
 
