@@ -1,18 +1,23 @@
 import React from 'react';
 import './Modal.css'
-const Modal = ({ handleClose, show, children }) => {
-    const showHideClassName = show ? "modal display-block" : "modal display-none";
-  
-    return (
-      <div className={showHideClassName}>
-        <section className="modal-main">
-          {children}
-          <a href="javascript:;" className="modal-close" onClick={handleClose}>
-          close
-        </a>
-        </section>
-      </div>
-    );
+export default class Modal extends React.Component {
+  onClose = e => {
+    this.props.onClose && this.props.onClose(e);
   };
-
-  export default Modal
+  render() {
+    if (!this.props.show) {
+      return null;
+    }
+    return (
+      <div class="modal" id="modal">
+      <h2>Modal Window</h2>
+      <div class="content">{this.props.children}</div>
+      <div class="actions">
+        <button class="toggle-button" onClick={this.onClose}>
+          close
+        </button>
+      </div>
+    </div>
+    );
+  }
+}
