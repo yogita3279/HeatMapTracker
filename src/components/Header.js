@@ -21,14 +21,14 @@ render(){
       <Navbar bg="dark" variant="dark">
       <Navbar.Brand href="#home">CovidTracker</Navbar.Brand>
       <Nav className="mr-auto">
-      <Nav.Link  class="toggle-button"
-          id="centered-toggle-button" onClick={e => {
+      <Nav.Link  data-toggle="modal" data-target="#myModal" onClick={e => {
               this.showModal();
          }}>Self Report</Nav.Link>  
       </Nav>
       </Navbar>
-      <ModalTemplate onClose={this.showModal} show={this.state.show} />
-
+         <div>
+         <ModalTemplate  id="myModal" onClose={this.showModal} show={this.state.show} />
+         </div>
        </div>
 
     )

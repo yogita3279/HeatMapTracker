@@ -17,18 +17,35 @@ class App extends Component {
 
   constructor(props){
    super(props)
+   this.state={
+     data_new:null
+   }
 
   }
+  componentDidMount() {
+    // Call our fetch function below once the component mounts
+  this.callBackendAPI()
+    .then(res => this.setState({ data_new: res.express }))
+    .catch(err => console.log(err));
+    console.log("MYDATA"+""+ this.state.data_new);
+}
+  // Fetches our GET route from the Express server. (Note the route we are fetching matches the GET route from server.js
+callBackendAPI = async () => {
+  const response = await fetch('/express_backend');
+  const body = await response.json();
 
-
-
+  if (response.status !== 200) {
+    throw Error(body.message) 
+  }
+  return body;
+};
   render(){
 
     return(
     <div>
       <Header/>
- 
-      <div class="map">
+      <p className="App-intro">{this.state.data_new}</p>
+       <div className="map">
         <Map center={{ lat: 47.333, lng: -122.606 }} zoom={14} positions={data}>
         </Map>
       </div>

@@ -7,40 +7,81 @@ import ModalBody from "react-bootstrap/ModalBody";
 import ModalHeader from "react-bootstrap/ModalHeader";
 import ModalFooter from "react-bootstrap/ModalFooter";
 import ModalTitle from "react-bootstrap/ModalTitle";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 
 export default class ModalTemplate extends React.Component {
+  constructor(props){
+    super(props);
+    this.state={
+      data:{
+        zipcode:'',
+        count:0
+      }
+    }
+  }
   onClose = (event) => {
     this.props.onClose && this.props.onClose(event);
     
-  };
+  }
+
+  // need to create these api
+  /*save your report to db and update db*/
+  saveReport=()=>{
+    alert("Your report is successfully submitted !!")
+  }
+  
+  /*add covid Patient api*/
+  addCovidPatient =(data)=>{
+     if (addPatient>=0){
+    return addPatient++;
+    }
+    console.log(addPatient)
+  }
+
+  /*delete covid Patient api*/
+  removeCovidPatient=()=>{
+    let removePatient=0;
+    if (removePatient>=0){
+    return removePatient--;
+    console.log(removePatient)
+    }
+    else {
+      return;
+    }
+
+  }
+
   render() {
     if (!this.props.show) {
       return null;
     }
+  
     return (
-      <div id="modal">
-       
+      <div id="modal" >
+      <Modal.Dialog >
       <ModalHeader>
         <ModalTitle>Report Your Condition</ModalTitle>
       </ModalHeader>
       <ModalBody>
-      <Button className="button color-red">
-          Having Covid Symptoms
+        <div className="button-area">
+      <Button variant="outline-danger" onClick={this.addCovidPatient}>
+           Covid Symptoms
         </Button>
-        <Button className="button color-green">
+        <Button variant="outline-success"  onClick={this.removeCovidPatient}>
           Feeling Better
         </Button>
+        </div>
       </ModalBody>
       <ModalFooter>
-      <Button  onClick={this.onClose}>
-          close
+      <Button  variant="danger" onClick={this.onClose}>
+          Cancel
         </Button>
-        <Button  >
-          Save
+        <Button  variant="success" onClick={this.saveReport} >
+          Report
         </Button>
       </ModalFooter>
+      </Modal.Dialog>
+
     </div>
     );
   }

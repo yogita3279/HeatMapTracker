@@ -1,12 +1,16 @@
-.button{
-  margin: 10px;
-  padding: 5px;
+.button-area{
+  margin: 5px auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width:300px
 }
-
 .color-red{
   background-color: firebrick
 }
 
 .color-green{
-  background-color: mediumseagreen
+  background-color: mediumseagreen,
+  
 }
