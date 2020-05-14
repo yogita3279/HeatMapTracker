@@ -1,0 +1,86 @@
+{
+    "totalCases": 981246,
+    "totalDeaths": 55258,
+    "casesByState": [
+      {
+        "name": "Seattle",
+        "range": "5,001 to 10,000",
+        "casesReported": 6539,
+        "communityTransmission": "Yes, defined area(s)",
+        "location":{  "lat": 47.6062095,"lng": -122.3320708,"weight": 0.5 }
+    
+      },
+      {
+        "name": "Bellevue",
+        "range": "101 to 1,000",
+        "casesReported": 345,
+        "communityTransmission": "Yes, defined area(s)",
+        "location":  { "lat": 47.619106,"lng": -122.1913479,"weight": 5 }
+
+
+      },
+      {
+        "name": "Redmond",
+        "range": "None",
+        "casesReported": "None",
+        "communityTransmission": "N/A",
+        "location":{  "lat": 47.332842, "lng": -122.608,"weight": 7  }
+
+      },
+      {
+        "name": "Kirkland",
+        "range": "5,001 to 10,000",
+        "casesReported": 6716,
+        "communityTransmission": "Yes, widespread",
+        "location":{  "lat": 47.330228, "lng": -122.606,"weight": 2 }
+
+      },
+      {
+        "name": "Bothell",
+        "range": "1,001 to 5,000",
+        "casesReported": 3055,
+        "communityTransmission": "Yes, widespread",
+        "location":{  "lat": 47.330169, "lng": -122.606,"weight":1 }
+
+      },
+      {
+        "name": "Woodenvile",
+        "range": "10,001 or more",
+        "casesReported": 43464,
+        "communityTransmission": "Yes, widespread",
+        "location":{ "lat": 47.330066, "lng": -122.6066700000001,"weight": 0.5}
+
+      },
+      {
+        "name": "Snohomish",
+        "range": "10,001 or more",
+        "casesReported": 13798,
+        "communityTransmission": "Yes, widespread",
+        "location":{  "lat": 47.6062095,"lng": -122.3320708,"weight": 0.5 }
+
+      },
+      {
+        "name": "Issaquah",
+        "range": "10,001 or more",
+        "casesReported": 25997,
+        "communityTransmission": "Yes, widespread",
+        "location":{  "lat": 47.330228, "lng": -122.606,"weight": 2  }
+
+      },
+      {
+        "name": "Sammamish",
+        "range": "1,001 to 5,000",
+        "casesReported": 4575,
+        "communityTransmission": "Yes, widespread",
+        "location":{  "lat": 47.6062095,"lng": -122.3320708,"weight": 0.5 }
+
+      },
+      {
+        "name": "Tulalip",
+        "range": "1,001 to 5,000",
+        "casesReported": 3892,
+        "communityTransmission": "Undetermined",
+        "location":{  "lat": 47.330228, "lng": -122.606,"weight": 2 }
+
+      }
+    ]}
