@@ -69,7 +69,7 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
 =======
 # HeatMapTracker
-This project is under construction but it has components that show how  to integrate heatmap on googleMap in react. 
+This project has components that show how  to integrate heatmap on googleMap in react and also show how to impleament autocomplete search with google maps in react.js
 
   #Run project by using below commands:
 1) git clone https://github.com/yogita3279/HeatMapTracker.git
